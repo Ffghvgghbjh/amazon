@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Hello {{session['user']}}</h2>
+
+    {% for i in subjects %}
+        <p>Product: {{ i }}</p>
+        {% if i=='Westinghouse Outdoor Power Equipment 12500 Peak Watt Tri-Fuel Home Backup Portable Generator, Remote Electric Start, Transfer Switch Ready, Gas, Propane, and Natural Gas Powered' %}
+            <p>Delivery: 1st july</p>
+            <br>
+            <img src="images/engine.jpg" alt="engine">
+        {% elif i=='SAMSUNG Galaxy S24 Ultra Cell Phone, 256GB AI Smartphone, Unlocked Android, 50MP Zoom Camera, Long Battery Life, S Pen, US Version, 2024, Titanium Gray'%}
+            <p>Delivery: 6th december</p>
+            <br>
+            <img src="images/samsung.jpg" alt="samsung">
+        {% else %}
+            <p>Delivery: unknown</p>
+        {% endif %}
+    {% endfor %}
+
+<a href="{{url_for('home')}}"> Main page </a>
+{% endblock %}
